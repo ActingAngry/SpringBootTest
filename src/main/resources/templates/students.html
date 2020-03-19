@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>学生管理</title>
+</head>
+<body>
+	<h1>学生管理</h1>
+	<a href="/addStudent.html">添加</a>
+	<form action="/student/queryStudent" method="get">
+		<input type="text" name="queryKeyWord" placeholder="学号/姓名/电话">
+		<input type="submit" value="查询">
+	</form>
+	<a href="">退出</a>
+	<table border="1">
+		<tr>
+			<td>学号</td>
+			<td>姓名</td>
+			<td>性别</td>
+			<td>电话</td>
+			<td>地址</td>
+			<td>备注</td>
+		</tr>
+		<tr th:each = "student, stat:${studentList}">
+			<td th:text = "${student.studentID}"></td>
+			<td th:text = "${student.name}"></td>
+			<td th:text = "${student.sex}"></td>
+			<td th:text = "${student.phone}"></td>
+			<td th:text = "${student.address}"></td>
+			<td th:text = "${student.remarks}"></td>
+			<td>
+				<a th:href="@{'/student/editStudent?id=' + ${student.ID}}">修改</a> | 
+				<a th:href="@{'/student/deleteEx?id=' + ${student.ID}}">删除</a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/student/updateEx" method="post">
+		<input type="hidden" name="ID" th:value="${student.ID}">
+		学号：<input type="text" name="studentID" th:value="${student.studentID}"><br>
+		姓名：<input type="text" name="name" th:value="${student.name}"><br>
+		性别：<input type="text" name="sex" th:value="${student.sex}"><br>
+		电话：<input type="text" name="phone" th:value="${student.phone}"><br>
+		地址：<input type="text" name="address" th:value="${student.address}"><br>
+		备注：<input type="text" name="remarks" th:value="${student.remarks}"><br>
+		<input type="submit" value="修改">
+	</form>
+	<button type="button" onclick="">返回</button>
+</body>
+</html>

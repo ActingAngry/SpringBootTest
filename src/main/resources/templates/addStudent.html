@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>录入学生</title>
+</head>
+<body>
+	
+	<form action="/student/createEx" method="post">
+		<div th:text = "${errorMsg}"></div>
+		学号：<input type="text" name="studentID"><br>
+		姓名：<input type="text" name="name"><br>
+		性别：<input type="text" name="sex"><br>
+		电话：<input type="text" name="phone"><br>
+		地址：<input type="text" name="address"><br>
+		备注：<input type="text" name="remarks"><br>
+		<input type="submit" value="添加">
+	</form>
+	<form action="/student/retrieveNEx" method="post">
+		<input type="submit" value="返回">
+	</form>
+</body>
+</html>
